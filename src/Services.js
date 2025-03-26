@@ -40,7 +40,7 @@ const Services = () => {
               of the first service represents the category description.
           */}
           {category.serviceList.length > 0 && (
-            <p style={{ textAlign: 'center', fontFamily: 'Marcellus' }}>
+            <p style={{ textAlign: 'center', fontFamily: 'Lato' }}>
               {category.serviceList[0].description}
             </p>
           )}
