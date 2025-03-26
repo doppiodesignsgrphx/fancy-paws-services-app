@@ -35,10 +35,19 @@ const Services = () => {
           <h2 style={{ textAlign: 'center', fontFamily: 'Marcellus' }}>
             {category.categoryName}
           </h2>
+          {/* 
+              If the service list is not empty, assume that the description 
+              of the first service represents the category description.
+          */}
+          {category.serviceList.length > 0 && (
+            <p style={{ textAlign: 'center', fontFamily: 'Marcellus' }}>
+              {category.serviceList[0].description}
+            </p>
+          )}
           <div
             style={{
               display: 'flex',
-              flexWrap: 'wrap',  // Changed to lowercase
+              flexWrap: 'wrap',
               justifyContent: 'center',
               alignItems: 'center',
               padding: 30,
@@ -49,7 +58,7 @@ const Services = () => {
                 key={service.serviceId}
                 service={service.serviceName}
                 price={service.price}
-                description={service.description}  // Passed description prop
+                // We no longer pass description to each card since it's shown once per category
               />
             ))}
           </div>
